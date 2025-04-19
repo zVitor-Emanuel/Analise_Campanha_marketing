@@ -1,9 +1,5 @@
 import streamlit as st
-import os
-import platform
-import subprocess
-
-html_file = "eda_notebook.html"
+import base64
 
 st.title("Análise Exploratória de Dados - Campanha de Marketing")
 
@@ -20,12 +16,9 @@ st.write("""<h2 style='font-size: 24px;'>Todo o projeto foi feito utilizando Pyt
          ou curiosidades sobre a análise.</h2>""", unsafe_allow_html=True)
 
 
-html_path = os.path.abspath(html_file)
+with open("eda_notebook.html", "rb") as f:
+    data = f.read()
+    b64 = base64.b64encode(data).decode()
 
-if st.button("Abrir Notebook"):
-    if platform.system() == "Windows":
-        os.startfile(html_path)
-    elif platform.system() == "Darwin":
-        subprocess.Popen(["open", html_path])
-    else:
-        subprocess.Popen(["xdg-open", html_path])
+href = f'<a href="data:text/html;base64,{b64}" target="_blank">📊 Clique aqui para abrir o notebook interativo</a>'
+st.markdown(href, unsafe_allow_html=True)
