@@ -1,5 +1,4 @@
 import streamlit as st
-import base64
 
 st.title("Análise Exploratória de Dados - Campanha de Marketing")
 
@@ -15,10 +14,3 @@ st.write("""<h2 style='font-size: 24px;'>Todo o projeto foi feito utilizando Pyt
          de forma rápida e visual sem precisar ficar olhando o código no notebook. Porém, ele está disponível abaixo para possíveis dúvidas
          ou curiosidades sobre a análise.</h2>""", unsafe_allow_html=True)
 
-
-with open("eda_notebook.html", "rb") as f:
-    data = f.read()
-    b64 = base64.b64encode(data).decode()
-
-href = f'<a href="data:text/html;base64,{b64}" target="_blank">📊 Clique aqui para abrir o notebook interativo</a>'
-st.markdown(href, unsafe_allow_html=True)
