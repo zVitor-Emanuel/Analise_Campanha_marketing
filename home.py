@@ -1,5 +1,5 @@
 import streamlit as st
-
+import webbrowser
 
 st.title("Análise Exploratória de Dados - Campanha de Marketing")
 
@@ -14,3 +14,9 @@ st.write("""<h2 style='font-size: 24px;'>Todo o projeto foi feito utilizando pyt
           Após pensar em como apresentar os dados, resolvi utilizar a biblioteca streamlit para fazer essa página contendo todos os insights,
          de forma rápida e visual sem precisar ficar olhando o código no notebook, porém ele está disponivel abaixo para possiveis duvidas
          ou curiosidades sobre a análise.</h2>""", unsafe_allow_html=True)
+
+def redirecionar():
+    webbrowser.open("https://github.com/zVitor-Emanuel/jupyter_notebooks/blob/main/eda_notebook.ipynb")
+
+if st.button("Acesse o notebook completo aqui"):
+    redirecionar()
