@@ -17,5 +17,5 @@ st.write("""<h2 style='font-size: 24px;'>Todo o projeto foi feito utilizando pyt
 
 url = "https://github.com/zVitor-Emanuel/Analise_Campanha_marketing/blob/main/eda_notebook.ipynb"
 
-if st.button('Ver código Jupyter Notebook'):
+if st.button('Ver código no Jupyter Notebook'):
     st.markdown(f'<a href="{url}" target="_blank">Clique aqui para acessar o notebook no GitHub</a>', unsafe_allow_html=True)
